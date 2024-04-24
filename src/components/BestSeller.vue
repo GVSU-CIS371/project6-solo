@@ -1,9 +1,9 @@
 <template>
   <v-container class="pa-0 my-5" >
     <v-row class="d-flex">
-      <v-col v-for="products in productStore.products" cols="3">
-        <StoreItem :product="products.data"></StoreItem>
-      </v-col>
+        <v-col v-for="product in ratedProds" cols="3">
+          <StoreItem :product="product"></StoreItem>
+        </v-col>
     </v-row>
   </v-container>
 </template>
@@ -14,5 +14,6 @@ import { useProductStore } from "../stores/ProductStore";
 import StoreItem from "./StoreItem.vue";
 
 const productStore = useProductStore();
-productStore.filterByRating(4.5);
+const ratedProds = productStore.filterByRating(4.5);
+productStore.init();
 </script>

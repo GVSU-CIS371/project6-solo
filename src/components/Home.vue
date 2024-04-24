@@ -3,7 +3,7 @@
   <v-container class="pa-0 my-5" >
     <v-row class="d-flex">
       <v-col v-for="products in productStore.products" cols="3">
-        <StoreItem :product="products.data"></StoreItem>
+        <StoreItem :product="products"></StoreItem>
       </v-col>
     </v-row>
   </v-container>
@@ -14,8 +14,7 @@
 import { useProductStore } from "../stores/ProductStore";
 import StoreItem from "./StoreItem.vue";
 
-const productStore = useProductStore();
-productStore.$reset();
-productStore.init();
+const productStore = useProductStore()
+productStore.init()
 
 </script>
